@@ -1,0 +1,54 @@
+<header>
+    <div class="container">                
+        {{ title }}                
+    </div>
+</header>
+
+<div id="fold" class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3" id="form-box">
+
+            <h1>
+                Plan your vacation
+            </h1>
+
+            <p>
+                <strong>
+                    Select Your City:
+                </strong>
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <select class="form-control" id="city-selector" (change)="onChangeCity($event)">
+                        <option>Edmonton</option>
+                        <option>London</option>
+                        <option>Paris</option>
+                        <option>Lagos</option>
+                        <option>Toronto</option>
+                        <option>Amsterdam</option>
+                    </select>
+                </div>
+                <div class="col-md-6 padding-top-10" id="weather-display">
+                    {{ currentWeather }} <strong> {{ currentTemperature }}</strong> 
+                </div>                    
+            </div>
+
+        </div>
+    </div>        
+</div>
+
+<div class="container">        
+    <div id="results">
+        <h2>{{ cityName }}</h2>
+
+        <p class="overview">{{ summary }}</p>
+        <p> {{ forecastWeather }}</p>
+
+    </div>
+</div>
+
+<footer>
+    &copy; {{ year }}, {{ title }}
+</footer>
